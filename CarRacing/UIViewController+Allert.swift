@@ -16,8 +16,8 @@ extension UIViewController {
                    textFieldHandler:((UITextField) -> Void)? = nil
     ) {
         let alert = UIAlertController(title: title,
-                                  message: message,
-                                  preferredStyle: .alert)
+                                      message: message,
+                                      preferredStyle: .alert)
         if let button = button {
             let action = UIAlertAction(title: button,
                                        style: .default
@@ -30,14 +30,14 @@ extension UIViewController {
             alert.addAction(action)
         }
         if secondButton != nil {
-        let cancelAction = UIAlertAction(title: secondButton,
-                                          style: .cancel
-        )
-        if textFieldHandler != nil {
-        alert.addTextField { textField in
-            textField.placeholder = "PIN"
-            }
-        alert.addAction(cancelAction)
+            let cancelAction = UIAlertAction(title: secondButton,
+                                             style: .cancel
+            )
+            if textFieldHandler != nil {
+                alert.addTextField { textField in
+                    textField.placeholder = "PIN"
+                }
+                alert.addAction(cancelAction)
             }
         }
         self.present(alert, animated: true)
