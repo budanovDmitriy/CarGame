@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if UserDefaults.standard.bool(forKey: "wasStarted") == false {
+            setInitialUserDefaultsValues()
+        }
+        UserDefaults.standard.set(true, forKey: "wasStarted")
         return true
     }
 
@@ -74,6 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func setInitialUserDefaultsValues() {
+        AppSettings.shared.name = "Dima"
+        AppSettings.shared.speed = 10
+        AppSettings.shared.carColor = .red
+        //AppSettings.shared.items = Items.tree
     }
 
 }

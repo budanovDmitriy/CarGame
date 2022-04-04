@@ -11,6 +11,8 @@ class MenuViewController: UIViewController {
 
     // MARK: - IBOutlets
 
+    
+    @IBOutlet weak var nickLabel: UILabel!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var menuWidth: NSLayoutConstraint!
     @IBOutlet weak var burgerButton: UIButton!
@@ -30,6 +32,11 @@ class MenuViewController: UIViewController {
         blurView.isHidden = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        nickLabel.text = AppSettings.shared.name
+    }
+    
     // MARK: - Private methods
     
     private func setText(){
@@ -46,6 +53,9 @@ class MenuViewController: UIViewController {
     }
 
     // MARK: - IBActions
+    
+   
+    
     
     @IBAction func openAdditionalMenu(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5) {

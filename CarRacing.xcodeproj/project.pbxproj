@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C783B2F27F50A9000E80807 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783B2E27F50A9000E80807 /* AppSettings.swift */; };
+		1C783B3127F50BE700E80807 /* Colar + Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783B3027F50BE700E80807 /* Colar + Codable.swift */; };
+		1C783B3327F513F600E80807 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783B3227F513F600E80807 /* SettingsViewController.swift */; };
 		1CCED38027F31A6000C330D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCED37F27F31A6000C330D6 /* AppDelegate.swift */; };
 		1CCED38227F31A6000C330D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCED38127F31A6000C330D6 /* SceneDelegate.swift */; };
 		1CCED38427F31A6000C330D6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCED38327F31A6000C330D6 /* MenuViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C783B2E27F50A9000E80807 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		1C783B3027F50BE700E80807 /* Colar + Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colar + Codable.swift"; sourceTree = "<group>"; };
+		1C783B3227F513F600E80807 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CCED37C27F31A6000C330D6 /* CarRacing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRacing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCED37F27F31A6000C330D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CCED38127F31A6000C330D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				1CCED39627F3265700C330D6 /* Fonts */,
 				1CCED37F27F31A6000C330D6 /* AppDelegate.swift */,
 				1CCED38127F31A6000C330D6 /* SceneDelegate.swift */,
+				1C783B3027F50BE700E80807 /* Colar + Codable.swift */,
+				1C783B3227F513F600E80807 /* SettingsViewController.swift */,
+				1C783B2E27F50A9000E80807 /* AppSettings.swift */,
 				1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */,
 				1CCED38327F31A6000C330D6 /* MenuViewController.swift */,
 				1CCED38527F31A6000C330D6 /* Main.storyboard */,
@@ -162,9 +171,12 @@
 			files = (
 				1CCED38A27F31A6000C330D6 /* CarRacing.xcdatamodeld in Sources */,
 				1CCED38427F31A6000C330D6 /* MenuViewController.swift in Sources */,
+				1C783B2F27F50A9000E80807 /* AppSettings.swift in Sources */,
 				1CCED3A227F33A2F00C330D6 /* UIViewController+Allert.swift in Sources */,
 				1CCED38027F31A6000C330D6 /* AppDelegate.swift in Sources */,
+				1C783B3127F50BE700E80807 /* Colar + Codable.swift in Sources */,
 				1CCED38227F31A6000C330D6 /* SceneDelegate.swift in Sources */,
+				1C783B3327F513F600E80807 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
