@@ -10,12 +10,12 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     // MARK: - Publick properties
-    
     var speedIsChanged = false
     var nameIsChanged = false
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var pictureImage: UIImageView!
     @IBOutlet weak var colorSegment: UISegmentedControl!
     @IBOutlet weak var barrierSegment: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
@@ -31,6 +31,7 @@ class SettingsViewController: UIViewController {
         textField.addTarget(self, action: #selector(SettingsViewController.textFieldDidChange(_:)), for: .editingChanged)
         segmentColor()
         segmentBarrier()
+        readPicture()
     }
    
     // MARK: - Private methods
@@ -53,6 +54,26 @@ class SettingsViewController: UIViewController {
        }
    }
     
+    private func readPicture(){
+        let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let imageURL = docDir.appendingPathComponent("photo.png")
+        let newImage = UIImage(contentsOfFile: imageURL.path) ?? nil
+        if newImage != nil {
+            pictureImage.image = newImage
+        } else {
+            pictureImage.image = UIImage(named: "GameLogo")
+        }
+    }
+    
+    private func writePicture(image:UIImage) {
+        let imageData = image.pngData()!
+        let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let imageURL = docDir.appendingPathComponent("photo.png")
+        try! imageData.write(to: imageURL)
+        let newImage = UIImage(contentsOfFile: imageURL.path)!
+        pictureImage.image = newImage
+    }
+    
     // MARK: - IBActions
     
     @IBAction func colorChanged(_ sender: UISegmentedControl) {
@@ -69,6 +90,19 @@ class SettingsViewController: UIViewController {
         }
         default : break
         }
+    }
+    
+    @IBAction func changePicture(_ sender: Any) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Galery", style: .default){_ in
+            self.openGallery()
+        })
+        alert.addAction(UIAlertAction(title: "Camera", style: .default){_ in
+            self.openCamera()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert,animated: true)
     }
     
     @IBAction func barrierChanged(_ sender: UISegmentedControl) {
@@ -94,6 +128,48 @@ class SettingsViewController: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
         AppSettings.shared.name = textField.text ?? ""
     }
-    
-    
+}
+
+private extension SettingsViewController {
+    func openCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    func openGallery()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension SettingsViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
+           writePicture(image: pickedImage)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

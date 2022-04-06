@@ -12,6 +12,7 @@ class MenuViewController: UIViewController {
     // MARK: - IBOutlets
 
     
+    @IBOutlet weak var photoPicture: UIImageView!
     @IBOutlet weak var nickLabel: UILabel!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var menuWidth: NSLayoutConstraint!
@@ -35,9 +36,21 @@ class MenuViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         nickLabel.text = AppSettings.shared.name
+        readPicture()
     }
     
     // MARK: - Private methods
+    
+    private func readPicture(){
+        let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let imageURL = docDir.appendingPathComponent("photo.png")
+        let newImage = UIImage(contentsOfFile: imageURL.path) ?? nil
+        if newImage != nil {
+            photoPicture.image = newImage
+        } else {
+            photoPicture.image = UIImage(named: "GameLogo")
+        }
+    }
     
     private func setText(){
         guard let myString = logoText.text else { return  }
