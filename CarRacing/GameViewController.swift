@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
     }
     
     private func startGame() {
-        UIView.animate(withDuration: 3,
+        UIView.animate(withDuration: 10 / Double(AppSettings.shared.speed) ,
                        delay: 0,
                        options: [.curveEaseInOut, .allowUserInteraction],
                        animations: {
