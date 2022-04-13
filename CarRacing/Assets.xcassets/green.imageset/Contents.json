@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Lovepik_com-401422488-green-car-2.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Lovepik_com-401422488-green-car.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Lovepik_com-401422488-green-car-1.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

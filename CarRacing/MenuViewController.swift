@@ -78,18 +78,24 @@ class MenuViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func startGame(_ sender: UIButton) {
+        let vc = GameViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
         showAlert(title: "Start",
                    message: "Enter your PIN",
                    button: "OK",
                   secondButton: "Cancel",
-                   textFieldHandler: { textField in
+                  textFieldHandler: { [self] textField in
                    let pin = 5800
                    if textField.text == String(pin) {
                        self.showAlert(title: "Start",
                                       message: "PIN entered corectly",
                                       button: "OK"
                                       )
+                       
                    } else { self.showAlert(title: "Start",
                                            message: "PIN entered incorectly",
                                            button: "OK"
