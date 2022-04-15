@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "1625868656_38-kartinkin-com-p-tekstura-dorogi-krasivo-46.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "1625868656_38-kartinkin-com-p-tekstura-dorogi-krasivo-44.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "1625868656_38-kartinkin-com-p-tekstura-dorogi-krasivo-45.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
