@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KWL-h1-gZr">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="eri-zh-m8z">
+            <objects>
+                <navigationController id="KWL-h1-gZr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mtI-EU-pJO">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2DE-9q-5e1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ona-BR-AN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1100" y="82"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -24,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b6-6k-NgE">
-                                <rect key="frame" x="16" y="60" width="80" height="40"/>
+                                <rect key="frame" x="16" y="104" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5Z5-Bg-Nu5"/>
                                     <constraint firstAttribute="height" constant="40" id="SCz-MZ-7z8"/>
@@ -65,8 +81,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vY-iN-tpF"/>
-                                    <segue destination="EAO-6v-OEo" kind="show" id="FF4-3B-U3C"/>
+                                    <segue destination="EAO-6v-OEo" kind="push" id="ybL-Da-hud"/>
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHJ-Qr-KU3">
@@ -78,8 +93,8 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-51-fOO">
-                                <rect key="frame" x="0.0" y="34" width="180" height="862"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-51-fOO">
+                                <rect key="frame" x="0.0" y="20" width="180" height="872"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cd8-Wv-CFc">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="872"/>
@@ -153,7 +168,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-g5-NFi">
                                                         <rect key="frame" x="0.0" y="699.66666666666663" width="180" height="175"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f6-Hq-AWI">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f6-Hq-AWI">
                                                                 <rect key="frame" x="52.333333333333336" y="72.333333333333371" width="75.333333333333314" height="30.666666666666671"/>
                                                                 <buttonConfiguration key="configuration" style="plain">
                                                                     <attributedString key="attributedTitle">
@@ -233,7 +248,9 @@
                             <constraint firstItem="Bsc-51-fOO" firstAttribute="leading" secondItem="xHJ-Qr-KU3" secondAttribute="leading" id="ysy-9Y-1Tf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3rM-k2-Tdi"/>
                     <connections>
+                        <outlet property="bestScoreLabel" destination="1lo-I9-fCA" id="An3-gv-BMm"/>
                         <outlet property="blurView" destination="xHJ-Qr-KU3" id="jJC-RP-rKI"/>
                         <outlet property="burgerButton" destination="2b6-6k-NgE" id="sC2-Tc-LpE"/>
                         <outlet property="logoImage" destination="cD2-U8-WEm" id="CQ7-9b-rb4"/>
@@ -241,6 +258,7 @@
                         <outlet property="menuWidth" destination="ocW-oG-VJL" id="ujo-pI-Q6v"/>
                         <outlet property="nickLabel" destination="4b6-Tm-zft" id="9Ld-45-bSE"/>
                         <outlet property="photoPicture" destination="x2p-s5-QxT" id="ZoZ-JS-W1M"/>
+                        <outlet property="recordScore" destination="0Ki-Ol-1Je" id="srx-AC-dO3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -252,11 +270,11 @@
             <objects>
                 <viewController id="m5Y-Ps-kp0" customClass="SettingsViewController" customModule="CarRacing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4E-B6-Rc6">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="050-Ov-b1t">
-                                <rect key="frame" x="163" y="60" width="102.33333333333331" height="33.333333333333343"/>
+                                <rect key="frame" x="163" y="104" width="102.33333333333331" height="33.333333333333343"/>
                                 <color key="tintColor" systemColor="systemMintColor"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Settings">
@@ -270,10 +288,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijA-eq-wSO">
-                                <rect key="frame" x="0.0" y="192.66666666666666" width="428" height="82.999999999999972"/>
+                                <rect key="frame" x="0.0" y="229.66666666666666" width="428" height="80.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-b0-C3U">
-                                        <rect key="frame" x="154.66666666666666" y="10.000000000000002" width="118.99999999999997" height="21.666666666666671"/>
+                                        <rect key="frame" x="154.66666666666666" y="9.0000000000000018" width="118.99999999999997" height="21.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Your speed : 10">
                                                 <attributes>
@@ -284,7 +302,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="pYM-vy-otb">
-                                        <rect key="frame" x="167" y="46.333333333333343" width="94" height="32"/>
+                                        <rect key="frame" x="167" y="44.000000000000028" width="94" height="32"/>
                                         <connections>
                                             <action selector="steppingOfSpeed:" destination="m5Y-Ps-kp0" eventType="valueChanged" id="5nI-Kf-VXU"/>
                                         </connections>
@@ -299,10 +317,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2F-U1-BkN">
-                                <rect key="frame" x="0.0" y="295.66666666666669" width="428" height="82.666666666666686"/>
+                                <rect key="frame" x="0.0" y="330" width="428" height="80.333333333333314"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y85-hE-DwD">
-                                        <rect key="frame" x="121.66666666666669" y="46.666666666666629" width="185" height="32"/>
+                                        <rect key="frame" x="121.66666666666669" y="44.666666666666686" width="185" height="32"/>
                                         <segments>
                                             <segment title="Tree"/>
                                             <segment title="Stone"/>
@@ -313,7 +331,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsV-Xg-YDg">
-                                        <rect key="frame" x="134.66666666666669" y="9.6666666666666305" width="158.66666666666669" height="21.666666666666671"/>
+                                        <rect key="frame" x="134.66666666666669" y="9.3333333333333162" width="158.66666666666669" height="21.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Choose your barrier">
                                                 <attributes>
@@ -334,10 +352,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVu-TE-Nak">
-                                <rect key="frame" x="0.0" y="398.33333333333331" width="428" height="82.666666666666686"/>
+                                <rect key="frame" x="0.0" y="430.33333333333331" width="428" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYS-Hh-p98">
-                                        <rect key="frame" x="117" y="10.333333333333371" width="194" height="21"/>
+                                        <rect key="frame" x="117" y="9.333333333333373" width="194" height="21.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Choose color of your car">
                                                 <attributes>
@@ -349,7 +367,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zLq-H1-vZx">
-                                        <rect key="frame" x="129" y="46.333333333333371" width="170" height="32"/>
+                                        <rect key="frame" x="129" y="44.666666666666686" width="170" height="32"/>
                                         <segments>
                                             <segment title="Green"/>
                                             <segment title="Red"/>
@@ -369,21 +387,21 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-HZ-G8f">
-                                <rect key="frame" x="128.33333333333331" y="113.33333333333333" width="171.33333333333331" height="59.333333333333329"/>
+                                <rect key="frame" x="128.33333333333331" y="157.33333333333334" width="171.33333333333331" height="52.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pf-iq-smu">
-                                <rect key="frame" x="0.0" y="501" width="428" height="165"/>
+                                <rect key="frame" x="0.0" y="530.33333333333337" width="428" height="160.66666666666663"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iao-Db-w6J">
-                                        <rect key="frame" x="172.66666666666666" y="0.0" width="82.666666666666657" height="82.666666666666671"/>
+                                        <rect key="frame" x="174" y="0.0" width="80" height="80.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iao-Db-w6J" secondAttribute="height" id="daf-rv-nx2"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-pf-l3p">
-                                        <rect key="frame" x="159" y="109.33333333333337" width="110" height="29.333333333333343"/>
+                                        <rect key="frame" x="159" y="105.66666666666663" width="110" height="29.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
@@ -460,11 +478,20 @@
             <objects>
                 <viewController id="EAO-6v-OEo" customClass="GameViewController" customModule="CarRacing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="shD-s5-HKd">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-15-H4R">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYf-2A-59u">
+                                <rect key="frame" x="193" y="56.666666666666657" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurgerMenu" translatesAutoresizingMaskIntoConstraints="NO" id="2YO-Vp-Lsn">
-                                <rect key="frame" x="20" y="724" width="128" height="128"/>
+                                <rect key="frame" x="20" y="778" width="128" height="128"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="j2U-sg-j1T"/>
@@ -476,7 +503,7 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameLogo" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-MR-F1z">
-                                <rect key="frame" x="20" y="44" width="100" height="100"/>
+                                <rect key="frame" x="20" y="50" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UHY-MR-F1z" secondAttribute="height" id="9UW-JE-3Dc"/>
                                     <constraint firstAttribute="width" constant="100" id="ETf-D4-j70"/>
@@ -484,27 +511,35 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cKJ-Tq-AEd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="V2E-15-H4R" firstAttribute="top" secondItem="shD-s5-HKd" secondAttribute="top" id="6o0-O7-SkZ"/>
+                            <constraint firstAttribute="bottom" secondItem="V2E-15-H4R" secondAttribute="bottom" id="DRX-ad-gl3"/>
                             <constraint firstItem="UHY-MR-F1z" firstAttribute="leading" secondItem="cKJ-Tq-AEd" secondAttribute="leading" constant="20" id="Mfn-oS-nuC"/>
-                            <constraint firstItem="UHY-MR-F1z" firstAttribute="top" secondItem="cKJ-Tq-AEd" secondAttribute="top" id="cEf-a3-ipA"/>
+                            <constraint firstItem="EYf-2A-59u" firstAttribute="centerY" secondItem="shD-s5-HKd" secondAttribute="centerY" multiplier="0.145" id="OV5-OS-tSw"/>
+                            <constraint firstItem="V2E-15-H4R" firstAttribute="leading" secondItem="shD-s5-HKd" secondAttribute="leading" id="bOt-dN-7TQ"/>
+                            <constraint firstItem="UHY-MR-F1z" firstAttribute="top" secondItem="shD-s5-HKd" secondAttribute="top" constant="50" id="cEf-a3-ipA"/>
                             <constraint firstItem="2YO-Vp-Lsn" firstAttribute="leading" secondItem="cKJ-Tq-AEd" secondAttribute="leading" constant="20" id="fv3-v4-Xu8"/>
-                            <constraint firstItem="cKJ-Tq-AEd" firstAttribute="bottom" secondItem="2YO-Vp-Lsn" secondAttribute="bottom" constant="20" id="qeF-yV-2VG"/>
+                            <constraint firstAttribute="bottom" secondItem="2YO-Vp-Lsn" secondAttribute="bottom" constant="20" id="qeF-yV-2VG"/>
+                            <constraint firstItem="EYf-2A-59u" firstAttribute="centerX" secondItem="shD-s5-HKd" secondAttribute="centerX" id="t8E-Ns-Vh4"/>
+                            <constraint firstAttribute="trailing" secondItem="V2E-15-H4R" secondAttribute="trailing" id="yZ4-ff-dJG"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="QNb-Xc-LVY" appends="YES" id="8QO-Eo-6Uw"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="5Cl-D1-HpQ"/>
+                    <navigationItem key="navigationItem" id="e5V-sI-TB0"/>
                     <connections>
+                        <outlet property="backgroungImage" destination="V2E-15-H4R" id="HLU-6V-1iC"/>
                         <outlet property="barrierImage" destination="UHY-MR-F1z" id="AHn-fu-zUN"/>
                         <outlet property="barrierLeading" destination="Mfn-oS-nuC" id="NGF-fN-w3Y"/>
-                        <outlet property="barrierTop" destination="cEf-a3-ipA" id="pGY-tg-EnW"/>
+                        <outlet property="barrierTop" destination="cEf-a3-ipA" id="0zU-pY-GWL"/>
                         <outlet property="barrierWidth" destination="ETf-D4-j70" id="dbx-uA-XCL"/>
                         <outlet property="carHeight" destination="j2U-sg-j1T" id="hwp-Nz-5TE"/>
                         <outlet property="carImage" destination="2YO-Vp-Lsn" id="rmA-W5-bdq"/>
                         <outlet property="carLeading" destination="fv3-v4-Xu8" id="2Hh-1t-ua0"/>
+                        <outlet property="scoreLabel" destination="EYf-2A-59u" id="Fg2-az-uhO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFy-AR-T6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -524,7 +559,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="809" y="82"/>
+            <point key="canvasLocation" x="808.87850467289718" y="81.641468682505405"/>
         </scene>
     </scenes>
     <resources>

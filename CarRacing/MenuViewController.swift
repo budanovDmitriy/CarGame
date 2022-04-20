@@ -12,6 +12,8 @@ class MenuViewController: UIViewController {
     // MARK: - IBOutlets
 
     
+    @IBOutlet weak var recordScore: UILabel!
+    @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var photoPicture: UIImageView!
     @IBOutlet weak var nickLabel: UILabel!
     @IBOutlet weak var blurView: UIVisualEffectView!
@@ -37,6 +39,8 @@ class MenuViewController: UIViewController {
         super.viewDidLayoutSubviews()
         nickLabel.text = AppSettings.shared.name
         readPicture()
+        bestScoreLabel.text = "Current score:  \(AppSettings.shared.score)"
+        recordScore.text = "Your record:  \(AppSettings.shared.bestScore)"
     }
     
     // MARK: - Private methods

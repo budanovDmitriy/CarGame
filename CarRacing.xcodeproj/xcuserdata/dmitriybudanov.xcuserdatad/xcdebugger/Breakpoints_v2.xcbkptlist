@@ -14,8 +14,8 @@
             filePath = "CarRacing/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "CarRacing/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "startGame(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,47 +39,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7DC79F46-2EA6-444C-974B-F7C303468D20"
+            uuid = "BC807BB2-5A89-48B8-8481-9421D5CAEE44"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRacing/GameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "rightSwipe(_:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "checkCrossing()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B022B10A-3A39-496A-8639-B4D81E3BBA4D"
+            uuid = "B6FB5D51-9C06-4DB8-A016-94D4F15107F1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRacing/GameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "leftSwipe(_:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewWillLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3ED623B-46D3-42A7-A9A7-C82FFA64CEFF"
+            uuid = "7E9C46F9-B638-457E-991B-B0D03A24F8CB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRacing/GameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "setCarImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,15 +87,123 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BE11D647-4C64-488B-A211-8FC1E6E7E5EE"
+            uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRacing/GameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "GameViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - 6e9620cee152b518"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.isFirstLaunch.getter : Swift.Bool"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - 668e537a82f9dec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.isFirstLaunch.setter : Swift.Bool"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - c14de1174ef2931d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.isFirstLaunch.modify : Swift.Bool"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - 8b42e93c7f7e956a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.isFirstLaunch.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - 50c0d7d3b4e4d3f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CarRacing.GameViewController"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "207">
+               </Location>
+               <Location
+                  uuid = "F85F7718-B87A-4622-8F17-754FA8A7CE61 - 9ea93d1998ad210c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRacing.GameViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CarRacing.GameViewController&gt;"
+                  moduleName = "CarRacing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriybudanov/XcodeProjects/CarRacing/CarRacing/GameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64AEF9B0-52C5-48A7-BB9E-5BAC1E407357"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarRacing/GameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "setCarImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -103,16 +211,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C7AD5777-EB52-46E4-B656-0EB3C639972E"
+            uuid = "B1AC6C77-1EF0-4DF3-BDD7-0ADC7DCF0025"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRacing/GameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "startGame()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE70D5A3-C5AE-45A8-8F7A-AA6D78A519C5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarRacing/GameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "startGame()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "607A6E73-56F9-43B1-AAC3-683BFDDE4644"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarRacing/GameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "checkCrossing()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

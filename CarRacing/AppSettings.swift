@@ -47,6 +47,26 @@ class AppSettings {
         }
     }
     
+    var score: Int {
+        get {
+            UserDefaults.standard.integer(forKey: UDKeys.score.rawValue)
+        }
+        set (newScore) {
+            
+            UserDefaults.standard.set(newScore, forKey: UDKeys.score.rawValue)
+        }
+    }
+    
+    var bestScore: Int {
+        get {
+            UserDefaults.standard.integer(forKey: UDKeys.bestScore.rawValue)
+        }
+        set (newBestScore) {
+            
+            UserDefaults.standard.set(newBestScore, forKey: UDKeys.bestScore.rawValue)
+        }
+    }
+    
     var carColor: UIColor {
         get {
             guard let data = UserDefaults.standard.data(forKey: UDKeys.color.rawValue) else { return UIColor() }
@@ -65,7 +85,7 @@ class AppSettings {
         }
     }
     
-    var items:String{
+    var items:String {
         get {
             UserDefaults.standard.string(forKey: UDKeys.items.rawValue ) ?? ""
         }
@@ -74,10 +94,15 @@ class AppSettings {
         }
     }
     
+   
+    
+    
     private enum UDKeys: String {
         case name
         case color
         case speed
         case items
+        case score
+        case bestScore
     }
 }
