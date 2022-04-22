@@ -39,7 +39,7 @@ class MenuViewController: UIViewController {
         super.viewDidLayoutSubviews()
         nickLabel.text = AppSettings.shared.name
         readPicture()
-        bestScoreLabel.text = "Current score:  \(AppSettings.shared.score)"
+        bestScoreLabel.text = "Current score:  \(AppSettings.shared.scores.last ?? 0)"
         recordScore.text = "Your record:  \(AppSettings.shared.bestScore)"
     }
     

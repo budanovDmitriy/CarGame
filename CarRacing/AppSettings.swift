@@ -47,9 +47,9 @@ class AppSettings {
         }
     }
     
-    var score: Int {
+    var scores: [Int] {
         get {
-            UserDefaults.standard.integer(forKey: UDKeys.score.rawValue)
+            UserDefaults.standard.array(forKey: UDKeys.score.rawValue) as? [Int] ?? [] 
         }
         set (newScore) {
             
@@ -94,6 +94,7 @@ class AppSettings {
         }
     }
     
+    
    
     
     
@@ -104,5 +105,6 @@ class AppSettings {
         case items
         case score
         case bestScore
+        case results
     }
 }

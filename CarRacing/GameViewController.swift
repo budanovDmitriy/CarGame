@@ -15,27 +15,10 @@ class GameViewController: UIViewController {
     private var isFirstStart = true
     private var isCrossed = false
     private var currentScore = 0
+    private var result = [RaceResult]()
+    private let KeyForUserDefaults = "myKey"
     
-    
-    struct RaceResult {
-        let name: String
-        let score: Int
-        let date: Date
-        
-        func getStringDate() -> String {
-            let date = Date()
-
-            
-            let dateFormatter = DateFormatter()
-
-            
-            dateFormatter.dateFormat = "d, MMM YY, HH:mm:ss"
-
-            
-            
-            return dateFormatter.string(from: date)
-        }
-    }
+   
     
     // MARK: - IBOutlets
     
@@ -92,10 +75,12 @@ class GameViewController: UIViewController {
             self.isCrossed.toggle()
         }
         if self.isCrossed == true {
-            AppSettings.shared.bestScore = max(AppSettings.shared.score,self.currentScore)
-            AppSettings.shared.score = self.currentScore
-            let result = RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now)
-            print(result)
+            AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,self.currentScore)
+            AppSettings.shared.scores += [self.currentScore]
+            result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
+            saveResult(result)
+            
+        
             showAlert(title: "You score = \(self.currentScore)",
                        message: "Try one more time",
                       button: "OK",
@@ -106,6 +91,13 @@ class GameViewController: UIViewController {
             })
         }
     }
+    
+    func saveResult(_ result: [RaceResult]) {
+        let data = result.map { try? JSONEncoder().encode($0) }
+        UserDefaults.standard.set(data, forKey: KeyForUserDefaults)
+    }
+
+    
     
     private func setBarrierPosition()->CGFloat {
         let barrierPosition:[CGFloat] = [view.frame.width * 3 / 4  - barrierWidth.constant / 2, view.frame.width * 1 / 2  - barrierWidth.constant / 2, view.frame.width * 1 / 4  - barrierWidth.constant / 2]

@@ -169,7 +169,7 @@
                                                         <rect key="frame" x="0.0" y="699.66666666666663" width="180" height="175"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f6-Hq-AWI">
-                                                                <rect key="frame" x="52.333333333333336" y="72.333333333333371" width="75.333333333333314" height="30.666666666666671"/>
+                                                                <rect key="frame" x="52.333333333333336" y="116.00000000000001" width="75.333333333333314" height="30.666666666666671"/>
                                                                 <buttonConfiguration key="configuration" style="plain">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="Settings">
@@ -185,11 +185,21 @@
                                                                     <segue destination="m5Y-Ps-kp0" kind="show" id="NUE-s9-3cO"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-V7-8yY">
+                                                                <rect key="frame" x="51.333333333333336" y="28.333333333333371" width="77.333333333333314" height="31"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Records"/>
+                                                                <connections>
+                                                                    <segue destination="Eiy-65-1Kd" kind="push" id="650-Qw-y0r"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="8f6-Hq-AWI" firstAttribute="centerY" secondItem="YWR-g5-NFi" secondAttribute="centerY" id="VrS-dX-QkP"/>
+                                                            <constraint firstItem="8f6-Hq-AWI" firstAttribute="centerY" secondItem="YWR-g5-NFi" secondAttribute="centerY" multiplier="1.5" id="VrS-dX-QkP"/>
+                                                            <constraint firstItem="a1i-V7-8yY" firstAttribute="centerX" secondItem="YWR-g5-NFi" secondAttribute="centerX" id="ePD-q1-fRJ"/>
                                                             <constraint firstItem="8f6-Hq-AWI" firstAttribute="centerX" secondItem="YWR-g5-NFi" secondAttribute="centerX" id="hJT-RW-kWx"/>
+                                                            <constraint firstItem="a1i-V7-8yY" firstAttribute="centerY" secondItem="YWR-g5-NFi" secondAttribute="centerY" multiplier="0.5" id="thf-Cp-GTK"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -264,6 +274,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="p4s-q6-EBe">
+            <objects>
+                <viewController id="Eiy-65-1Kd" customClass="TableViewController" customModule="CarRacing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jAA-VU-iDT">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="psU-Em-9ck">
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1bQ-0z-Kbx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="psU-Em-9ck" firstAttribute="leading" secondItem="1bQ-0z-Kbx" secondAttribute="leading" id="Re6-fC-xzY"/>
+                            <constraint firstItem="1bQ-0z-Kbx" firstAttribute="trailing" secondItem="psU-Em-9ck" secondAttribute="trailing" id="Tvo-YO-EA0"/>
+                            <constraint firstItem="1bQ-0z-Kbx" firstAttribute="bottom" secondItem="psU-Em-9ck" secondAttribute="bottom" id="VMH-B3-Smr"/>
+                            <constraint firstItem="psU-Em-9ck" firstAttribute="top" secondItem="1bQ-0z-Kbx" secondAttribute="top" id="bgT-VJ-8uj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="f83-RC-0Sj"/>
+                    <connections>
+                        <outlet property="tableView" destination="psU-Em-9ck" id="nUE-i6-zac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ih1-HQ-vS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="831"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="F0K-Xi-IGJ">
