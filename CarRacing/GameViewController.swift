@@ -77,10 +77,15 @@ class GameViewController: UIViewController {
         if self.isCrossed == true {
             AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,self.currentScore)
             AppSettings.shared.scores += [self.currentScore]
-            result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
-            saveResult(result)
-            
-        
+            if loadResult().count != 0  {
+                result = loadResult()
+                result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
+                saveResult(result)
+            }
+            else {
+                result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
+                saveResult(result)
+            }
             showAlert(title: "You score = \(self.currentScore)",
                        message: "Try one more time",
                       button: "OK",
@@ -97,7 +102,13 @@ class GameViewController: UIViewController {
         UserDefaults.standard.set(data, forKey: KeyForUserDefaults)
     }
 
-    
+    func loadResult() -> [RaceResult] {
+        guard let encodedData = UserDefaults.standard.array(forKey: KeyForUserDefaults) as? [Data] else {
+            return []
+        }
+
+        return encodedData.map { try! JSONDecoder().decode(RaceResult.self, from: $0) }
+    }
     
     private func setBarrierPosition()->CGFloat {
         let barrierPosition:[CGFloat] = [view.frame.width * 3 / 4  - barrierWidth.constant / 2, view.frame.width * 1 / 2  - barrierWidth.constant / 2, view.frame.width * 1 / 4  - barrierWidth.constant / 2]
