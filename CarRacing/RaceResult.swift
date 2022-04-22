@@ -12,10 +12,10 @@ struct RaceResult: Codable {
     let score: Int
     let date: Date
     
-   /* func getStringDate() -> String {
+    func getStringDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d, MMM YY, HH:mm:ss"
         return dateFormatter.string(from: date)
     }
-    */
+
 }

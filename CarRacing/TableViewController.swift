@@ -45,7 +45,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         let cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) ?? UITableView()) as! UITableViewCell
         for result in results {
-            cell.textLabel?.text = "Name:\(result.name) Score:\(result.score) Date:\(result.date)"
+            cell.textLabel?.text = "Name:\(result.name) Score:\(result.score) Date:\(result.getStringDate())"
         }
         //cell.textLabel?.text = self.results[indexPath.row]
 
