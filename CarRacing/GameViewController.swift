@@ -75,17 +75,10 @@ class GameViewController: UIViewController {
             self.isCrossed.toggle()
         }
         if self.isCrossed == true {
-            AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,self.currentScore)
-            AppSettings.shared.scores += [self.currentScore]
-            if loadResult().count != 0  {
-                result = loadResult()
-                result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
-                saveResult(result)
-            }
-            else {
-                result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
-                saveResult(result)
-            }
+            AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,AppSettings.shared.scores.last?.score ?? 0)
+            result = AppSettings.shared.scores
+            result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
+            AppSettings.shared.scores = result
             showAlert(title: "You score = \(self.currentScore)",
                        message: "Try one more time",
                       button: "OK",
@@ -97,10 +90,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func saveResult(_ result: [RaceResult]) {
-        let data = result.map { try? JSONEncoder().encode($0) }
-        UserDefaults.standard.set(data, forKey: KeyForUserDefaults)
-    }
+  
 
     func loadResult() -> [RaceResult] {
         guard let encodedData = UserDefaults.standard.array(forKey: KeyForUserDefaults) as? [Data] else {

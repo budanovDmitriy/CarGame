@@ -39,7 +39,7 @@ class MenuViewController: UIViewController {
         super.viewDidLayoutSubviews()
         nickLabel.text = AppSettings.shared.name
         readPicture()
-        bestScoreLabel.text = "Current score:  \(AppSettings.shared.scores.last ?? 0)"
+        bestScoreLabel.text = "Current score:  \(AppSettings.shared.scores.last?.score ?? 0)"
         recordScore.text = "Your record:  \(AppSettings.shared.bestScore)"
     }
     
@@ -82,6 +82,11 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func callToDeveloper(_ sender: Any) {
+        guard let numberDeepLink = URL(string: "tel://+375336076948")
+        else { return }
+        UIApplication.shared.open(numberDeepLink)
+    }
     
     
     @IBAction func startGame(_ sender: UIButton) {

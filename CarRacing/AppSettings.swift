@@ -47,13 +47,16 @@ class AppSettings {
         }
     }
     
-    var scores: [Int] {
+    var scores: [RaceResult] {
         get {
-            UserDefaults.standard.array(forKey: UDKeys.score.rawValue) as? [Int] ?? [] 
+            guard let encodedData = UserDefaults.standard.array(forKey: UDKeys.score.rawValue) as? [Data] else {
+                return []
+            }
+            return encodedData.map { try! JSONDecoder().decode(RaceResult.self, from: $0) }
         }
         set (newScore) {
-            
-            UserDefaults.standard.set(newScore, forKey: UDKeys.score.rawValue)
+            let data = newScore.map { try? JSONEncoder().encode($0) }
+            UserDefaults.standard.set(data, forKey: UDKeys.score.rawValue)
         }
     }
     

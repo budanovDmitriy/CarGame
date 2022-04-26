@@ -14,7 +14,7 @@ struct RaceResult: Codable {
     
     func getStringDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d, MMM YY, HH:mm:ss"
+        dateFormatter.dateFormat = "d MMM YY, HH:mm"
         return dateFormatter.string(from: date)
     }
 
