@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
     
     private func startGame() {
         if self.isCrossed != true {
-            UIView.animate(withDuration: 30 / Double(AppSettings.shared.speed ),
+            UIView.animate(withDuration: 15 / Double(AppSettings.shared.speed ),
                        delay: 0,
                        options: [.curveLinear],
                        animations: { [weak self] in
@@ -75,10 +75,10 @@ class GameViewController: UIViewController {
             self.isCrossed.toggle()
         }
         if self.isCrossed == true {
-            AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,AppSettings.shared.scores.last?.score ?? 0)
             result = AppSettings.shared.scores
             result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
             AppSettings.shared.scores = result
+            AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,AppSettings.shared.scores.last?.score ?? 0)
             showAlert(title: "You score = \(self.currentScore)",
                        message: "Try one more time",
                       button: "OK",
