@@ -23,6 +23,8 @@
 		1CCED39D27F3273000C330D6 /* OverpassReg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCED39B27F3273000C330D6 /* OverpassReg.ttf */; };
 		1CCED39E27F3273000C330D6 /* OverpassBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCED39C27F3273000C330D6 /* OverpassBold.ttf */; };
 		1CCED3A227F33A2F00C330D6 /* UIViewController+Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */; };
+		1CFDFA44283387580059BBE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CFDFA43283387580059BBE6 /* GoogleService-Info.plist */; };
+		F001C0678D0BF08FCABFB13A /* Pods_CarRacing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CE96E9C1F0A2D60C49E6E7 /* Pods_CarRacing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		1CCED39B27F3273000C330D6 /* OverpassReg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OverpassReg.ttf; sourceTree = "<group>"; };
 		1CCED39C27F3273000C330D6 /* OverpassBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OverpassBold.ttf; sourceTree = "<group>"; };
 		1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Allert.swift"; sourceTree = "<group>"; };
+		1CFDFA43283387580059BBE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28D1B9D652DD5C496C7C1F4D /* Pods-CarRacing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRacing.debug.xcconfig"; path = "Target Support Files/Pods-CarRacing/Pods-CarRacing.debug.xcconfig"; sourceTree = "<group>"; };
+		7DA48699886F150A0086F286 /* Pods-CarRacing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRacing.release.xcconfig"; path = "Target Support Files/Pods-CarRacing/Pods-CarRacing.release.xcconfig"; sourceTree = "<group>"; };
+		F5CE96E9C1F0A2D60C49E6E7 /* Pods_CarRacing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarRacing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F001C0678D0BF08FCABFB13A /* Pods_CarRacing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,8 @@
 			children = (
 				1CCED37E27F31A6000C330D6 /* CarRacing */,
 				1CCED37D27F31A6000C330D6 /* Products */,
+				B5DF8AF01E302784985DCDB5 /* Pods */,
+				A7C58270B8AF4528777E04C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,20 +86,15 @@
 			isa = PBXGroup;
 			children = (
 				1CCED39627F3265700C330D6 /* Fonts */,
-				1CCED37F27F31A6000C330D6 /* AppDelegate.swift */,
-				1CCED38127F31A6000C330D6 /* SceneDelegate.swift */,
-				1C783B3027F50BE700E80807 /* Colar + Codable.swift */,
-				1C9F1A0E2812D36F000E7228 /* TableViewController.swift */,
-				1C95CDC22803027A00B57B40 /* GameViewController.swift */,
-				1C9F1A0C2812B8E3000E7228 /* RaceResult.swift */,
-				1C783B3227F513F600E80807 /* SettingsViewController.swift */,
-				1C783B2E27F50A9000E80807 /* AppSettings.swift */,
-				1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */,
-				1CCED38327F31A6000C330D6 /* MenuViewController.swift */,
+				1CFDFA42283386C70059BBE6 /* Delegates */,
+				1CFDFA3E283386300059BBE6 /* ViewControllers */,
+				1CFDFA41283386A50059BBE6 /* Models */,
+				1CFDFA3F2833866D0059BBE6 /* Extensions */,
 				1CCED38527F31A6000C330D6 /* Main.storyboard */,
 				1CCED38B27F31A6400C330D6 /* Assets.xcassets */,
 				1CCED38D27F31A6400C330D6 /* LaunchScreen.storyboard */,
 				1CCED39027F31A6400C330D6 /* Info.plist */,
+				1CFDFA43283387580059BBE6 /* GoogleService-Info.plist */,
 				1CCED38827F31A6000C330D6 /* CarRacing.xcdatamodeld */,
 			);
 			path = CarRacing;
@@ -105,6 +109,61 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		1CFDFA3E283386300059BBE6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C9F1A0E2812D36F000E7228 /* TableViewController.swift */,
+				1CCED38327F31A6000C330D6 /* MenuViewController.swift */,
+				1C783B3227F513F600E80807 /* SettingsViewController.swift */,
+				1C95CDC22803027A00B57B40 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1CFDFA3F2833866D0059BBE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1C783B3027F50BE700E80807 /* Colar + Codable.swift */,
+				1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1CFDFA41283386A50059BBE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C783B2E27F50A9000E80807 /* AppSettings.swift */,
+				1C9F1A0C2812B8E3000E7228 /* RaceResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CFDFA42283386C70059BBE6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1CCED37F27F31A6000C330D6 /* AppDelegate.swift */,
+				1CCED38127F31A6000C330D6 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A7C58270B8AF4528777E04C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE96E9C1F0A2D60C49E6E7 /* Pods_CarRacing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5DF8AF01E302784985DCDB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28D1B9D652DD5C496C7C1F4D /* Pods-CarRacing.debug.xcconfig */,
+				7DA48699886F150A0086F286 /* Pods-CarRacing.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CCED39327F31A6400C330D6 /* Build configuration list for PBXNativeTarget "CarRacing" */;
 			buildPhases = (
+				D6A21A643C139A423A45F6E9 /* [CP] Check Pods Manifest.lock */,
 				1CCED37827F31A6000C330D6 /* Sources */,
 				1CCED37927F31A6000C330D6 /* Frameworks */,
 				1CCED37A27F31A6000C330D6 /* Resources */,
+				1CFDFA45283387650059BBE6 /* ShellScript */,
+				B9C84BE88CFE459A06023FC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,10 +230,72 @@
 				1CCED38727F31A6000C330D6 /* Main.storyboard in Resources */,
 				1CCED39E27F3273000C330D6 /* OverpassBold.ttf in Resources */,
 				1CCED39D27F3273000C330D6 /* OverpassReg.ttf in Resources */,
+				1CFDFA44283387580059BBE6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CFDFA45283387650059BBE6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		B9C84BE88CFE459A06023FC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarRacing/Pods-CarRacing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarRacing/Pods-CarRacing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarRacing/Pods-CarRacing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6A21A643C139A423A45F6E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarRacing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1CCED37827F31A6000C330D6 /* Sources */ = {
@@ -330,11 +454,13 @@
 		};
 		1CCED39427F31A6400C330D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D1B9D652DD5C496C7C1F4D /* Pods-CarRacing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarRacing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -357,6 +483,7 @@
 		};
 		1CCED39527F31A6400C330D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA48699886F150A0086F286 /* Pods-CarRacing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
