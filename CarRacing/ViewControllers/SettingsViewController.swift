@@ -78,6 +78,8 @@ class SettingsViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func colorChanged(_ sender: UISegmentedControl) {
+        Analytics.logEvent("ChangeColor"
+        ])
         switch colorSegment.selectedSegmentIndex
         {
         case 0: do {
@@ -94,7 +96,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changePicture(_ sender: Any) {
-        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Galery", style: .default){_ in
             self.openGallery()
@@ -107,12 +108,18 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func barrierChanged(_ sender: UISegmentedControl) {
+        Analytics.logEvent("ChangeBarrier", parameters: [
+            "OldBarrier": AppSettings.shared.items as NSObject
+        ])
         switch barrierSegment.selectedSegmentIndex {
         case 0:AppSettings.shared.items = "tree"
         case 1:AppSettings.shared.items = "stone"
         case 2:AppSettings.shared.items = "rubish"
         default:break
         }
+        Analytics.logEvent("ChangeBarrier", parameters: [
+            "NewBarrier": AppSettings.shared.items as NSObject
+        ])
     }
     
     @IBAction func steppingOfSpeed(_ sender: UIStepper) {
@@ -132,10 +139,12 @@ class SettingsViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         Analytics.logEvent("ChangeName", parameters: [
-            "OldName": AppSettings.shared.name as NSObject,
-            "NewName": textField.text as! NSObject
+            "OldName": AppSettings.shared.name as NSObject
         ])
         AppSettings.shared.name = textField.text ?? ""
+        Analytics.logEvent("ChangeName", parameters: [
+            "NewName": AppSettings.shared.name as NSObject
+        ])
     }
 }
 
