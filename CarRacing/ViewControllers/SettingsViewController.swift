@@ -78,7 +78,8 @@ class SettingsViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func colorChanged(_ sender: UISegmentedControl) {
-        Analytics.logEvent("ChangeColor"
+        Analytics.logEvent("ChangeColor", parameters: [
+            "COLOR": AppSettings.shared.carColor as NSObject
         ])
         switch colorSegment.selectedSegmentIndex
         {
@@ -93,6 +94,9 @@ class SettingsViewController: UIViewController {
         }
         default : break
         }
+        Analytics.logEvent("ChangeColor", parameters: [
+            "COLOR": AppSettings.shared.carColor as NSObject
+        ])
     }
     
     @IBAction func changePicture(_ sender: Any) {

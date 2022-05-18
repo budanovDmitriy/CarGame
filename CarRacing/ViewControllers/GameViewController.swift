@@ -77,6 +77,7 @@ class GameViewController: UIViewController {
         }
         if self.isCrossed == true {
             Analytics.logEvent("FinishGame", parameters: [
+                "nickName": AppSettings.shared.name as NSObject,
                 "result": self.currentScore as NSObject
             ])
             result = AppSettings.shared.scores
@@ -143,10 +144,10 @@ class GameViewController: UIViewController {
     
     @IBAction func tapAction(_ sender: Any) {
         while isFirstStart == true {
-            startGame()
             Analytics.logEvent("StartGame", parameters: [
                 "Nickname": AppSettings.shared.name as NSObject
             ])
+            startGame()
             isFirstStart.toggle()
         }
     }
