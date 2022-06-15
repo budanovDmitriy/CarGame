@@ -8,4 +8,6 @@ target 'CarRacing' do
   # Pods for CarRacing
 pod 'FirebaseAnalytics'
 pod 'FirebaseCrashlytics'
+pod 'RxSwift'
+pod 'RxCocoa'
 end

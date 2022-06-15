@@ -20,7 +20,6 @@ enum Items: String {
 class AppSettings {
     
     public static var shared = AppSettings()
-    
     private init() { }
     
     var name: String {

@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAnalytics
+import RxSwift
+import RxCocoa
 
 class GameViewController: UIViewController {
     
@@ -18,6 +20,7 @@ class GameViewController: UIViewController {
     private var currentScore = 0
     private var result = [RaceResult]()
     private let KeyForUserDefaults = "myKey"
+    let rxResult = PublishSubject<[RaceResult]>()
     
     
     
@@ -84,6 +87,8 @@ class GameViewController: UIViewController {
             result.append(RaceResult(name: AppSettings.shared.name, score: self.currentScore, date: .now))
             AppSettings.shared.scores = result
             AppSettings.shared.bestScore = max(AppSettings.shared.bestScore,AppSettings.shared.scores.last?.score ?? 0)
+            rxResult.onNext(result)
+            rxResult.onCompleted()
             showAlert(title: "You score = \(self.currentScore)",
                       message: "Try one more time",
                       button: "OK",

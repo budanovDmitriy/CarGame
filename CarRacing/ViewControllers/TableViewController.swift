@@ -8,15 +8,54 @@
 
 import UIKit
 import FirebaseCrashlytics
+import RxSwift
+import RxCocoa
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UIScrollViewDelegate {
+   
+    @IBOutlet var tableView: UITableView!
     
+    private let bag = DisposeBag()
+    private let viewModel = GameViewController()
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            tableView.rx.setDelegate(self).disposed(by: bag)
+            
+            bindTableView()
+        }
+    
+    private func bindTableView() {
+        tableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: "cellId")
+                
+        viewModel.rxResult.bind(to: tableView.rx.items(cellIdentifier: "cellId", cellType: ResultTableViewCell.self)) { (row,result,cell) in
+                    cell.rxResult = result
+                }.disposed(by: bag)
+                
+                tableView.rx.modelSelected(RaceResult.self).subscribe(onNext: { result in
+                    print("SelectedItem: \(result.name)")
+                }).disposed(by: bag)
+                
+       }
+    
+    
+   
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
     // These strings will be the data for the table view cells
     var results = [RaceResult]()
     private let KeyForUserDefaults = "myKey"
     let cellReuseIdentifier = "cell"
     
-    @IBOutlet var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +68,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func readRecord() {
         guard AppSettings.shared.scores.count > 0 else {
             let userInfo = [
-              NSLocalizedDescriptionKey: NSLocalizedString("The request failed.", comment: ""),
-              NSLocalizedFailureReasonErrorKey: NSLocalizedString("No records found", comment: ""),
-              NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Does this data exist?", comment: ""),
-              "ProductID": "CarRacing",
-              "View": "TableViewController"
+                NSLocalizedDescriptionKey: NSLocalizedString("The request failed.", comment: ""),
+                NSLocalizedFailureReasonErrorKey: NSLocalizedString("No records found", comment: ""),
+                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Does this data exist?", comment: ""),
+                "ProductID": "CarRacing",
+                "View": "TableViewController"
             ]
             let error = NSError.init(domain: NSCocoaErrorDomain,
                                      code: -1001,
@@ -80,5 +119,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
     }
+    */
+}
+extension TableViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }

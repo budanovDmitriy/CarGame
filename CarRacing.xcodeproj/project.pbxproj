@@ -23,6 +23,8 @@
 		1CCED39D27F3273000C330D6 /* OverpassReg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCED39B27F3273000C330D6 /* OverpassReg.ttf */; };
 		1CCED39E27F3273000C330D6 /* OverpassBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCED39C27F3273000C330D6 /* OverpassBold.ttf */; };
 		1CCED3A227F33A2F00C330D6 /* UIViewController+Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */; };
+		1CF4630E2859E47900925E08 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4630C2859E47900925E08 /* ResultTableViewCell.swift */; };
+		1CF4630F2859E47900925E08 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4630D2859E47900925E08 /* ResultTableViewCell.xib */; };
 		1CFDFA44283387580059BBE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CFDFA43283387580059BBE6 /* GoogleService-Info.plist */; };
 		F001C0678D0BF08FCABFB13A /* Pods_CarRacing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CE96E9C1F0A2D60C49E6E7 /* Pods_CarRacing.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		1CCED39B27F3273000C330D6 /* OverpassReg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OverpassReg.ttf; sourceTree = "<group>"; };
 		1CCED39C27F3273000C330D6 /* OverpassBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OverpassBold.ttf; sourceTree = "<group>"; };
 		1CCED3A127F33A2F00C330D6 /* UIViewController+Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Allert.swift"; sourceTree = "<group>"; };
+		1CF4630C2859E47900925E08 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		1CF4630D2859E47900925E08 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		1CFDFA43283387580059BBE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28D1B9D652DD5C496C7C1F4D /* Pods-CarRacing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRacing.debug.xcconfig"; path = "Target Support Files/Pods-CarRacing/Pods-CarRacing.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA48699886F150A0086F286 /* Pods-CarRacing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRacing.release.xcconfig"; path = "Target Support Files/Pods-CarRacing/Pods-CarRacing.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9BACB128586DF400D856E6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1CF4630C2859E47900925E08 /* ResultTableViewCell.swift */,
+				1CF4630D2859E47900925E08 /* ResultTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		1CCED37327F31A6000C330D6 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 				1CCED38327F31A6000C330D6 /* MenuViewController.swift */,
 				1C783B3227F513F600E80807 /* SettingsViewController.swift */,
 				1C95CDC22803027A00B57B40 /* GameViewController.swift */,
+				1C9BACB128586DF400D856E6 /* Cell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +243,7 @@
 				1CCED38C27F31A6400C330D6 /* Assets.xcassets in Resources */,
 				1CCED38727F31A6000C330D6 /* Main.storyboard in Resources */,
 				1CCED39E27F3273000C330D6 /* OverpassBold.ttf in Resources */,
+				1CF4630F2859E47900925E08 /* ResultTableViewCell.xib in Resources */,
 				1CCED39D27F3273000C330D6 /* OverpassReg.ttf in Resources */,
 				1CFDFA44283387580059BBE6 /* GoogleService-Info.plist in Resources */,
 			);
@@ -312,6 +327,7 @@
 				1C783B3127F50BE700E80807 /* Colar + Codable.swift in Sources */,
 				1C9F1A0D2812B8E3000E7228 /* RaceResult.swift in Sources */,
 				1CCED38227F31A6000C330D6 /* SceneDelegate.swift in Sources */,
+				1CF4630E2859E47900925E08 /* ResultTableViewCell.swift in Sources */,
 				1C783B3327F513F600E80807 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
